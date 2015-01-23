@@ -41,6 +41,142 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
+					<h1>Часть 1. Основы JavaScript</h1>
+				</section>
+
+				<section>
+					<h3>План</h3>
+					<ul>
+						<li>Величины, типы и операторы</li>
+						<li>Функции</li>
+						<li>Объекты и массивы</li>
+						<li>Функции высшего порядка</li>
+						<li>Снова объекты: прототипы и наследование</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Основные типы данных в JavaScript</h3>
+					<ul>
+						<li>Numeric</li>
+						<li>String</li>
+						<li>Boolean</li>
+						<li>Object</li>
+						<li>Array</li>
+						<li>Function</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Числа</h3>
+					<ul>
+						<li>Нет отдельных типов для хранения числовых значений (ну кроме asm.js)</li>
+						<li>Number (64 бит)</li>
+            <li>Максимум ~ 10^15</li>
+						<li>Дробные числа (9.99 3.12e5)</li>
+					</ul>
+				</section>
+
+				<section>
+          <h3>Что можно делать?</h3>
+          <p>
+            Да практически все!
+          </p>
+
+					<ul>
+						<li>40.0 + 2</li>
+						<li>0xFF - 0325</li>
+						<li>2.1e-4 * 2e5</li>
+						<li>142 % 0x66</li>
+					</ul>
+
+          <p>
+            Ну и кому интересно <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">& | ^ ~ << >> >>></a>
+          </p>
+				</section>
+
+				<section>
+          <h3>Специальные числа</h3>
+					<pre><code data-trim>
+var x = 2 / 0;          // Infinity
+var y = -2 / 0;         // -Infinity
+
+var z = "apple" / 3     // NaN
+
+typeof x                // "number"
+typeof y                // "number"
+typeof z                // "number"
+
+isNaN(z)                // true
+isNaN(x + y)            // true
+
+					</code></pre>
+				</section>
+
+				<section>
+          <h3>Могут быть объектами</h3>
+					<pre><code data-trim>
+var x = new Number(42);     // WARNING: Do not try this at home
+
+x == 42                     // true
+x === 42                    // false
+
+typeof x                    // "object"
+typeof 42                   // "number"
+					</code></pre>
+				</section>
+
+				<section>
+          <h3>Свойства Numeric</h3>
+					<pre><code data-trim>
+Numeric.MAX_VALUE           // Максимально возможноe число
+Numeric.MIN_VALUE           // Минимально возможное число
+Numeric.NEGATIVE_INFINITY   // -Infinity
+Numeric.NaN                 // NaN
+Numeric.POSITIVE_INFINITY   // Infinity
+					</code></pre>
+        </section>
+
+				<section>
+          <h2>Приведение типов</h2>
+					<pre><code data-trim>
+parseInt(10 / 3)
+parseInt("10", 2)
+parseFloat("13")
+
+parseInt("2e5")             // 2
+parseInt("2asdfasfasf")     // 2
+
+var x = Number("199")
+typeof x                    // "number"
+
+(42).toString()             // "42"
+(255).toString(16)          // "ff"
+					</code></pre>
+        </section>
+
+        <section>
+          <h2>Строки</h2>
+					<pre><code data-trim>
+"Row, row, row your boat,"
+'Gently down the stream.'
+"If you see an alligator, \n"
+"Don\'t forget to scream.'
+
+"Row," + "row," + "row" + "your" + "boat,"
+"Gently down the stream\u06D4"
+["Throw your teacher overboard",
+"And listen to his scream."].join('\n')
+					</code></pre>
+        </section>
+
+				<section>
+					<h3>Методы работы со строками</h3>
+          <a href="http://www.w3schools.com/js/js_strings.asp">http://www.w3schools.com/js/js_strings.asp</a>
+          <a href="http://www.w3schools.com/js/js_string_methods.asp">http://www.w3schools.com/js/js_string_methods.asp</a>
+				</section>
+
+				<section>
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>
 					<p>
